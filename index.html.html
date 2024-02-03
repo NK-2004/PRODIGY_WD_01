@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>Interactive Navigation Menu</title>
+</head>
+<body>
+    <div id="navbar">
+        <div class="container">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <div id="home" class="section">
+        <h2>Home Section</h2>
+        <p>First project of Internship at Prodigy InfoTech.</p>
+    </div>
+
+    <div id="about" class="section">
+        <h2>About Section</h2>
+        <p>This is a webpage having an interactive navigation menu that changes color or style when scrolled or when hovering over a menu item.</p>
+    </div>
+
+    <div id="services" class="section">
+        <h2>Services Section</h2>
+        <p>Explore the services we offer in this section.</p>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>npkobarne@gmail.com</h2>
+        <p>Contact us for more information.</p>
+    </div>
+</body>
+</html>
+<style>body {
+    margin: 0;background-color: rgb(233, 76, 76);
+    font-family: Arial, sans-serif;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1000;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+#navbar a:hover {
+    color: #ff7f50; /* Coral color on hover */
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Style change on scroll */
+#navbar.scrolled {
+    background-color: #222;
+}
+</style>
+<script>window.onscroll = function() {
+    const navbar = document.getElementById('navbar');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+};
+</script>
